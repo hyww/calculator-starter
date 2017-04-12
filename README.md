@@ -11,6 +11,11 @@ npm install
 npm run build
 ```
 
+## build with watch
+```
+npm run build -- --watch
+```
+
 ## start
 ```
 npm start
@@ -20,4 +25,9 @@ Then go to `http://localhost:3000`
 ## lint
 ```
 npm run lint
+```
+
+## test
+```
+npm test
 ```
