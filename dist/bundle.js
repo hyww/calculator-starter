@@ -22242,7 +22242,7 @@
 	          op: null
 	        });
 	      } else {
-	        this.setState({ lastValue: null, value: this.calculate(), op: null });
+	        this.setState({ lastValue: null, value: this.calculate(), n: true, op: null });
 	      }
 	    }
 	  }, {
