@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/web-seminar/calculator-starter.git"
+    "url": "git+https://github.com/hyww/calculator-starter.git"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
