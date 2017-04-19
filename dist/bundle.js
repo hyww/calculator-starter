@@ -22235,22 +22235,19 @@
 	      if (this.state.op) {
 	        this.setState({
 	          lastValue: null,
-	          value: this.calculate(),
+	          value: this.calculate(true),
 	          lastOp: this.state.op || this.state.lastOp,
 	          lastOp2: this.state.value,
 	          n: true,
 	          op: null
 	        });
 	      } else {
-	        this.setState({ lastValue: null, value: this.calculate(), n: true, op: null });
+	        this.setState({ lastValue: null, value: this.calculate(true), n: true, op: null });
 	      }
 	    }
 	  }, {
 	    key: 'calculate',
-	    value: function calculate() {
-	      if (this.state.lastValue === null && this.state.lastOp === null) {
-	        return this.state.value;
-	      }
+	    value: function calculate(o) {
 	      var value = void 0;
 	      var op = void 0;
 	      var op2 = void 0;
@@ -22258,10 +22255,12 @@
 	        value = this.state.lastValue;
 	        op = this.state.op;
 	        op2 = this.state.value;
-	      } else {
+	      } else if (o && this.state.lastOp !== null) {
 	        value = this.state.value;
 	        op = this.state.lastOp;
 	        op2 = this.state.lastOp2;
+	      } else {
+	        return this.state.value;
 	      }
 	      switch (op) {
 	        case '+':
